@@ -15,11 +15,11 @@ class hello extends StatelessWidget {
        children: [
          Row(children: [
           SizedBox(width: 5),
-          Container(
-            width:60,
-            height:60,
-            decoration: BoxDecoration(color:Colors.white,shape: BoxShape.circle)),
-            SizedBox(width: 10),
+          // Container(
+          //   width:60,
+          //   height:60,
+          //   decoration: BoxDecoration(color:Colors.white,shape: BoxShape.circle)),
+          //   SizedBox(width: 10),
             Text("Hello,Buddy",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
             SizedBox(width: 110),
             Container(
