@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodbuddy/acc1.dart';
 import 'package:foodbuddy/first.dart';
 
 class homepage extends StatelessWidget {
@@ -17,8 +18,8 @@ class homepage extends StatelessWidget {
             height: 200,
             width: 200,
           ),
-            Row(
-             children: [
+          Row(
+            children: [
               Padding(padding: EdgeInsets.all(40)),
               Text(
                 "Welcome",
@@ -35,17 +36,18 @@ class homepage extends StatelessWidget {
               Text("Email", style: TextStyle(fontSize: 15)),
             ],
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
-                hintText: ("Enter your username"),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                filled: true,
-                fillColor: Colors.white,
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    borderSide: BorderSide(color: Colors.white))),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: ("Enter your username"),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: InputBorder.none),
+            ),
           ),
           SizedBox(height: 10),
           Row(
@@ -54,17 +56,18 @@ class homepage extends StatelessWidget {
               Text("Password", style: TextStyle(fontSize: 15)),
             ],
           ),
-          TextFormField(
-            decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email_outlined),
-                hintText: ("Enter your password"),
-                contentPadding:
-                    EdgeInsets.symmetric(horizontal: 5, vertical: 5),
-                filled: true,
-                fillColor: Colors.white,
-                enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(50),
-                    borderSide: BorderSide(color: Colors.white))),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: TextFormField(
+              decoration: InputDecoration(
+                  prefixIcon: Icon(Icons.email_outlined),
+                  hintText: ("Enter your password"),
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: InputBorder.none),
+            ),
           ),
           SizedBox(height: 10),
           Row(
@@ -121,9 +124,15 @@ class homepage extends StatelessWidget {
               Padding(padding: EdgeInsets.fromLTRB(70, 10, 20, 30)),
               Text("No account?", style: TextStyle(fontSize: 13)),
               SizedBox(width: 3),
-              Text("Sign up",
-                  style: TextStyle(
-                      fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+              TextButton(
+                onPressed: () {
+                  Navigator.push(
+                      context, MaterialPageRoute(builder: (_) => account1()));
+                },
+                child: Text("Sign up",
+                    style: TextStyle(
+                        fontSize: 13, color: Color.fromARGB(255, 228, 98, 98))),
+              ),
             ],
           ),
         ]));

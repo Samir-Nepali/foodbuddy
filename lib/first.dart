@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:foodbuddy/hello.dart';
 
 class firstapp extends StatelessWidget {
   const firstapp({super.key});
@@ -12,11 +13,16 @@ class firstapp extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          
-          ClipRRect(
-            borderRadius: BorderRadius.circular(30),
-            child: Image.asset("assets/images/first.jpg",
-                width: 300.0, height: 180.0, fit: BoxFit.cover),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (_) => hello()));
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(30),
+              child: Image.asset("assets/images/first.jpg",
+                  width: 300.0, height: 180.0, fit: BoxFit.cover),
+            ),
           ),
           Text("Have a tasty treat brought to you!"),
           SizedBox(height: 6),
